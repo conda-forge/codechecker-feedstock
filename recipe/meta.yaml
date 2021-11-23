@@ -10,7 +10,7 @@ source:
   sha256: b49d9e10b6d53fd95b28db353c19f69e907188d45b6aeff8a5940fee35509534
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - CodeChecker = codechecker_common.cli:main
     - merge-clang-extdef-mappings = codechecker_merge_clang_extdef_mappings.cli:main
