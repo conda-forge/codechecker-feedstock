@@ -1,23 +1,23 @@
 {% set name = "codechecker" %}
-{% set version = "6.18.0" %}
+{% set version = "6.18.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: b49d9e10b6d53fd95b28db353c19f69e907188d45b6aeff8a5940fee35509534
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: eecfcc64bb3211804a4177953d5f85f19ec3dd0b5f4aa49dcf6b276aef2e788d
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - CodeChecker = codechecker_common.cli:main
     - merge-clang-extdef-mappings = codechecker_merge_clang_extdef_mappings.cli:main
     - post-process-stats = codechecker_statistics_collector.cli:main
     - report-converter = codechecker_report_converter.cli:main
     - tu_collector = tu_collector.tu_collector:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -46,13 +46,13 @@ test:
     - tu_collector --help
 
 about:
-  home: "https://github.com/Ericsson/CodeChecker"
+  home: https://github.com/Ericsson/CodeChecker
   license: Apache-2.0 WITH LLVM-exception
   license_family: APACHE
   license_file: LICENSE.TXT
-  summary: "CodeChecker is an analyzer tooling, defect database and viewer extension"
+  summary: CodeChecker is an analyzer tooling, defect database and viewer extension
   doc_url:
-  dev_url: 
+  dev_url:
 
 extra:
   recipe-maintainers:
