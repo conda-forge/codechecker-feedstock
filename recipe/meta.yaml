@@ -1,5 +1,5 @@
 {% set name = "codechecker" %}
-{% set version = "6.18.2" %}
+{% set version = "6.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c793a1951f58baf0ba414e41f6458af6292f6428c699e84b8b71da161d834f0b
+  sha256: da7244124bb63bc57fda3ede4254dc7e3a11711dfc7e59575f8482fab450f95a
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - CodeChecker = codechecker_common.cli:main
     - merge-clang-extdef-mappings = codechecker_merge_clang_extdef_mappings.cli:main
