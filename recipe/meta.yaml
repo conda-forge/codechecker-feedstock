@@ -1,5 +1,5 @@
 {% set name = "codechecker" %}
-{% set version = "6.20.0" %}
+{% set version = "6.22.2.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da7244124bb63bc57fda3ede4254dc7e3a11711dfc7e59575f8482fab450f95a
+  sha256: 8cccc9b9f8e9bc5994590397893c2b42c1a53797b857d75956cf8a845e3c33ac
 
 build:
   number: 0
