@@ -1,5 +1,5 @@
 {% set name = "codechecker" %}
-{% set version = "6.20.0" %}
+{% set version = "6.23.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da7244124bb63bc57fda3ede4254dc7e3a11711dfc7e59575f8482fab450f95a
+  sha256: ca54c48f264284097b5ef6465d3d1c352a4e55b58ac9392b911597f6039e36da
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - alembic
     - gitpython
     - lxml
+    - multiprocess
     - mypy_extensions
     - portalocker
     - psutil
