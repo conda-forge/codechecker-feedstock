@@ -38,6 +38,7 @@ requirements:
     - pyyaml
     - sqlalchemy
     - thrift
+    - sarif
 
 test:
   commands:
