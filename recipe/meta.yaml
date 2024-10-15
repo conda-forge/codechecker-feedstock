@@ -27,16 +27,17 @@ requirements:
     - python
     - pip
     - setuptools
-    - sarif-om
   run:
     - alembic
     - gitpython
     - lxml
+    - multiprocess
     - mypy_extensions
     - portalocker
     - psutil
     - python
     - pyyaml
+    - sarif-om
     - sqlalchemy
     - thrift
 
