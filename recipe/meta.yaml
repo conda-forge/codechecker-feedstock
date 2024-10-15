@@ -27,6 +27,7 @@ requirements:
     - python
     - pip
     - setuptools
+    - sarif
   run:
     - alembic
     - gitpython
@@ -38,7 +39,6 @@ requirements:
     - pyyaml
     - sqlalchemy
     - thrift
-    - sarif
 
 test:
   commands:
