@@ -27,7 +27,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - sarif
+    - sarif-tools
   run:
     - alembic
     - gitpython
