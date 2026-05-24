@@ -34,23 +34,23 @@ requirements:
     - setuptools
   run:
     - python
-    - sarif-tools >=3.0,<4.dev0
-    - types-pyyaml >=6.0,<7.dev0
-    - alembic >=1.5,<2.dev0
-    - gitpython >=3.0,<4.dev0
-    - types-psutil >=7.0,<8.dev0
-    - lxml >=6.0,<7.dev0
-    - portalocker >=3.0,<4.dev0
-    - semver >=3.0,<4.dev0
-    - thrift >=0.22,<1.dev0
-    - setuptools >=80.0,<81.dev0
-    - multiprocess >=0.70,<1.dev0
-    - argcomplete >=3.0,<4.dev0
-    - requests >=2.0,<3.dev0
-    - sqlalchemy >=2.0,<3.dev0
-    - authlib >=1.6,<2.dev0
-    - psutil >=7.0,<8.dev0
-    - pyyaml >=6.0,<7.dev0
+    - sarif-tools >=3.0,<4.0
+    - types-pyyaml >=6.0,<7.0
+    - alembic >=1.5,<2.0
+    - gitpython >=3.0,<4.0
+    - types-psutil >=7.0,<8.0
+    - lxml >=6.0,<7.0
+    - portalocker >=3.0,<4.0
+    - semver >=3.0,<4.0
+    - thrift >=0.22,<1.0
+    - setuptools >=80.0,<81.0
+    - multiprocess >=0.70,<1.0
+    - argcomplete >=3.0,<4.0
+    - requests >=2.0,<3.0
+    - sqlalchemy >=2.0,<3.0
+    - authlib >=1.6,<2.0
+    - psutil >=7.0,<8.0
+    - pyyaml >=6.0,<7.0
 
 tests:
   - python:
