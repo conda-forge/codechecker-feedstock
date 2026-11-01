@@ -2,19 +2,20 @@ schema_version: 1
 
 context:
   name: codechecker
-  version: "6.20.0"
+  version: "6.29.1"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: da7244124bb63bc57fda3ede4254dc7e3a11711dfc7e59575f8482fab450f95a
+  url: https://pypi.org/packages/source/c/codechecker/codechecker-${{ version }}.tar.gz
+  sha256: d03f1e3be52e9a365787fb74d0851c04bb545305c920d6c56941beb2f90e49c4
 
 build:
-  number: 1
-  script: ${{ PYTHON }} -m pip install . -vv
+  number: 0
+  skip: match(python, '<3.9')
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
       - CodeChecker = codechecker_common.cli:main
@@ -25,23 +26,44 @@ build:
 
 requirements:
   build:
+    - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
   host:
     - python
     - pip
+    - setuptools >=80,<81
   run:
-    - alembic
-    - gitpython
-    - lxml
-    - mypy_extensions
-    - portalocker
-    - psutil
     - python
-    - pyyaml
-    - sqlalchemy
-    - thrift
+    - alembic >=1.5,<2
+    - argcomplete >=3,<4
+    - authlib >=1.6,<2
+    - gitpython >=3,<4
+    - lxml >=6,<7
+    - multiprocess >=0.70,<1
+    - portalocker >=3,<4
+    - prettytable >=3,<4
+    - psutil >=7,<8
+    - pyyaml >=6,<7
+    - requests >=2,<3
+    - sarif-tools >=3,<4
+    - semver >=3,<4
+    - setuptools >=80,<81
+    - sqlalchemy >=2,<3
+    - thrift >=0.22,<1
+    - types-lxml >=2026.2,<2026.3
+    - types-psutil >=7,<8
+    - types-pyyaml >=6,<7
+    - types-setuptools >=80,<81
 
 tests:
+  - python:
+      imports:
+        - codechecker_analyzer
+        - codechecker_client
+        - codechecker_common
+        - codechecker_server
+      pip_check: true
   - script:
       - CodeChecker --help
       - merge-clang-extdef-mappings --help
