@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "6.29.1"
+  version: "6.29.3"
 
 package:
   name: codechecker
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/codechecker/codechecker-${{ version }}.tar.gz
-  sha256: d03f1e3be52e9a365787fb74d0851c04bb545305c920d6c56941beb2f90e49c4
+  sha256: 13a01fd7250ebf107af9c3f338745654c5efe0320c3db9e5f8744d4db0510b02
 
 build:
   number: 0
